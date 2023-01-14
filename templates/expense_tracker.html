@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Expense Tracker</title>
+  </head>
+  <body>
+    <h1>Expense Tracker</h1>
+    <form action="add_expense" method="POST">
+      <label for="amount">Amount:</label>
+      <input type="text" id="amount" name="amount"><br>
+      <label for="category">Category:</label>
+      <input type="text" id="category" name="category"><br>
+      <label for="date">Date:</label>
+      <input type="text" id="date" name="date"><br>
+      <input type="submit" value="Add Expense">
+    </form>
+    <br>
+    <h2>Total Expenses:</h2>
+    <p id="total_expenses"></p>
+    <br>
+    <h2>Expenses by Category:</h2>
+    <form action="expenses_by_category" method="POST">
+      <label for="category">Category:</label>
+      <input type="text" id="category" name="category">
+      <input type="submit" value="View Expenses">
+    </form>
+    <br>
+    <h2>View All Expenses:</h2>
+    <button id="view_expenses">View Expenses</button>
+    <br>
+    <div id="expenses_list"></div>
+  </body>
+</html>
+<script>
+  // Add event listener for add expense form
+  const addExpenseForm = document.querySelector('form[action="add_expense"]');
+  addExpenseForm.addEventListener('submit', (e) => {
+e.preventDefault();
+const amount = document.querySelector('input[name="amount"]').value;
+const category = document.querySelector('input[name="category"]').value;
+const date = document.querySelector('input[name="date"]').value;
+add_expense(amount, category, date);
+document.querySelector('input[name="amount"]').value = '';
+document.querySelector('input[name="category"]').value = '';
+document.querySelector('input[name="date"]').value = '';
+// Update the view expenses table
+updateViewExpenses();
+});
+
+// Add event listener for view expenses button
+const viewExpensesBtn = document.querySelector('button[action="view_expenses"]');
+viewExpensesBtn.addEventListener('click', () => {
+updateViewExpenses();
+});
+
+// Add event listener for total expenses button
+const totalExpensesBtn = document.querySelector('button[action="total_expenses"]');
+totalExpensesBtn.addEventListener('click', () => {
+    const totalExpenses = calculateTotalExpenses();
+    // display the total expenses on the page
+});
+
+// Add event listener for expenses by category form
+const expensesByCategoryForm = document.querySelector('form[action="expenses_by_category"]');
+expensesByCategoryForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const category = document.querySelector('input[name="category"]').value;
+    // fetch the expenses data by category and display it on the page
+});
+
+// Add event listener for view expenses button
+const viewExpensesBtn = document.querySelector('#view_expenses_btn');
+viewExpensesBtn.addEventListener('click', () => {
+    // fetch the expenses data and display it on the page
+});
+
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+setupEventListeners();
+});
+
+</script>
+</body>
+</html>

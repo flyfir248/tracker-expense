@@ -1,0 +1,32 @@
+/* Set the background color to Discord's dark theme color */
+body {
+    background-color: #36393F;
+}
+
+/* Set the text color to white */
+h1, h2, label, p {
+    color: white;
+}
+
+/* Style the input fields to look like Discord's input fields */
+input[type="text"], input[type="submit"] {
+    background-color: #2F3136;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+}
+
+/* Style the form to have a transparent background */
+form {
+    background-color: transparent;
+}
+
+/* Style the view expenses button to look like a Discord button */
+button {
+    background-color: #7289DA;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+}
